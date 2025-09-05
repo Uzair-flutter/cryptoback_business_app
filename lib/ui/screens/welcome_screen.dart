@@ -10,6 +10,69 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../notifier/constant_notifiers.dart';
 
+// class WelcomeScreen extends StatelessWidget {
+//   const WelcomeScreen({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       // backgroundColor: AppColors.kPrimaryColor,
+//       body: Padding(
+//         padding: EdgeInsetsGeometry.symmetric(horizontal: 25.w),
+//         child: Column(
+//           children: [
+//             SizedBox(height: 100.h),
+//             Container(
+//               height: 400.86.h,
+//               decoration: BoxDecoration(
+//                 image: DecorationImage(image: AssetImage(PngAssets.bg)),
+//               ),
+//               child: Column(
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: [
+//                   Center(
+//                     child: SvgPicture.asset(
+//                       SvgAssets.logoWithBlueArrow,
+//                       height: 132.h,
+//                       width: 130.w,
+//                     ),
+//                   ),
+//                   SizedBox(height: 49.h),
+//                   Center(
+//                     child: white38w800Center(data: 'WELCOME TO\nCRYPTO BACK'),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             // white20w400Center(data: 'Lets Get Started'),
+//             Spacer(),
+//             Consumer(
+//               builder: (context, ref, child) {
+//                 return Column(
+//                   children: [
+//                     roleButton('For Businesses', () {
+//                       ref.read(roleNotifier.notifier).state = Roles.business;
+//                       Navigator.pushNamed(context, loginRoute);
+//                     }),
+//                     SizedBox(height: 23.h),
+//                     roleButton('For Shoppers', () {
+//                       // ref.read(roleNotifier.notifier).state = Roles.shopper;
+//                       // Navigator.pushNamed(context, loginRoute);
+//                     }),
+//                   ],
+//                 );
+//               },
+//             ),
+//
+//             SizedBox(height: 30.h),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -31,7 +94,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 35.h),
-            white38w800Center(data: 'WELCOME TO\nBITCOIN BACK'),
+            white38w800Center(data: 'WELCOME TO\nCRYPTO BACK'),
             SizedBox(height: 27.h),
             white20w400Center(data: 'Lets Get Started'),
             Spacer(),

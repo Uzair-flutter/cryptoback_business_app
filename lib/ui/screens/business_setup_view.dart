@@ -14,7 +14,6 @@ import '../widgets/upload_logo_view.dart';
 
 class BusinessSetupView extends ConsumerWidget {
   const BusinessSetupView({super.key});
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final businessState = ref.watch(businessSetupProvider);
@@ -22,14 +21,38 @@ class BusinessSetupView extends ConsumerWidget {
     late PageController pageController;
     // Initialize PageController with current step
     pageController = PageController(initialPage: businessState.currentStep!);
-
     void handleNextButton(BuildContext context) {
       // Validate current step
       if (!businessNotifier.validateCurrentStep()) {
         String? errorMessage = businessNotifier.getValidationErrorMessage();
         if (errorMessage != null) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
+            SnackBar(
+              content: Text(
+                errorMessage,
+                style: TextStyle(
+                  color: Colors.white, // Set text color
+                  fontWeight: FontWeight.bold, // Set font weight
+                  fontSize: 16.sp, // Set font size
+                ),
+              ),
+              backgroundColor: Colors.red, // Set background color
+              duration: Duration(seconds: 1), // Set duration
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.r), // Rounded corners
+              ),
+              behavior: SnackBarBehavior
+                  .floating, // Make the SnackBar floating above the content
+              margin: EdgeInsets.symmetric(
+                horizontal: 20.w,
+                vertical: 80.h,
+              ), // Add margin around the SnackBar
+              elevation: 10, // Set elevation to add shadow
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.w,
+                vertical: 12.w,
+              ), // Set custom padding
+            ),
           );
         }
         return;

@@ -2,7 +2,7 @@
 
 class PngAssets {
   static const String _assets = 'assets/png/';
-
+  static const String bg = '${_assets}bg.png';
   static const String person = '${_assets}person.png';
   static const String map = '${_assets}map.png';
 }
@@ -10,6 +10,7 @@ class PngAssets {
 class SvgAssets {
   static const String _assets = 'assets/svg/';
   static const String logo = '${_assets}logo.svg';
+  static const String logoWithBlueArrow = "${_assets}logoWithBlueArrow.svg";
   static const String logo2 = '${_assets}logo2.svg';
   static const String logo3 = '${_assets}logo3.svg';
   static const String or = '${_assets}or.svg';
@@ -27,6 +28,7 @@ class SvgAssets {
   static const String filter = '${_assets}filter.svg';
   static const String referral = '${_assets}referral.svg';
   static const String user = '${_assets}user.svg';
+  static const String bgSvg = '${_assets}bg.svg';
 }
 
 class LottieAssets {
