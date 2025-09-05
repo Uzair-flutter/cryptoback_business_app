@@ -67,9 +67,7 @@ class CustomerProfileScreen extends ConsumerWidget {
                 );
               }).toList(),
             ),
-
             SizedBox(height: 10.h),
-
             // Pagination Dots
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
