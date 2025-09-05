@@ -45,8 +45,8 @@ class WelcomeScreen extends StatelessWidget {
                     }),
                     SizedBox(height: 23.h),
                     roleButton('For Shoppers', () {
-                      ref.read(roleNotifier.notifier).state = Roles.shopper;
-                      Navigator.pushNamed(context, loginRoute);
+                      // ref.read(roleNotifier.notifier).state = Roles.shopper;
+                      // Navigator.pushNamed(context, loginRoute);
                     }),
                   ],
                 );

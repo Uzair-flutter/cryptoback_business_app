@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../notifier/business_step_notifier.dart';
+import '../notifier/business_setup_notifier.dart';
 import '../notifier/dummy_notifiers.dart';
 import '../themes/color_constants.dart';
 
@@ -57,7 +57,7 @@ class CategorySelectionView extends StatelessWidget {
                             .updateSelectedCategory(category.title);
                         // Update business step validation
                         ref
-                            .read(businessStepProvider.notifier)
+                            .read(businessSetupProvider.notifier)
                             .updateCategorySelection(true);
                       },
                       isSelected: state.selectedCategory == category.title,

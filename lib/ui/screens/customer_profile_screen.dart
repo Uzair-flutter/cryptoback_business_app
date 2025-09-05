@@ -19,19 +19,15 @@ class CustomerProfileScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final merchantState = ref.watch(merchantProvider);
-
     final merchantNotifier = ref.read(merchantProvider.notifier);
-
     final CarouselSliderController carouselController =
         CarouselSliderController();
 
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 25.w),
-
         child: Column(
           children: [
-            SizedBox(height: 60.h),
             SizedBox(height: 50.h),
 
             CarouselSlider(
@@ -89,7 +85,6 @@ class CustomerProfileScreen extends ConsumerWidget {
               ],
             ),
             SizedBox(height: 20.h),
-
             Container(
               height: 134.h,
               width: 343.w,

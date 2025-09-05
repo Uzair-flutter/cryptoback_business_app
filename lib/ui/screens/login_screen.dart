@@ -2,11 +2,8 @@ import 'package:cryptoback_business_app/app_routes.dart';
 import 'package:cryptoback_business_app/resources/assets.dart';
 import 'package:cryptoback_business_app/ui/notifier/auth_notifier.dart';
 import 'package:cryptoback_business_app/ui/notifier/constant_notifiers.dart';
-import 'package:cryptoback_business_app/ui/screens/shopper_bottom_nav.dart';
 import 'package:cryptoback_business_app/utils/custom_font_style.dart';
-import 'package:cryptoback_business_app/utils/enums.dart';
 import 'package:cryptoback_business_app/utils/responsive.dart';
-import 'package:cryptoback_business_app/widgets/social_button.dart';
 import 'package:cryptoback_business_app/widgets/user_form_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,17 +22,22 @@ class LoginScreen extends ConsumerWidget {
     final role = ref.read(roleNotifier);
     ref.listen(authProvider, (prev, next) {
       if (next.isAuthenticated) {
-        role == Roles.shopper
-            ? Navigator.pushNamedAndRemoveUntil(
-                context,
-                shopprBottomNavBarRoute,
-                (route) => false,
-              )
-            : Navigator.pushNamedAndRemoveUntil(
-                context,
-                businessBottomNavBBarRoute,
-                (route) => false,
-              );
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          businessBottomNavBBarRoute,
+          (route) => false,
+        );
+        // role == Roles.shopper
+        //     ? Navigator.pushNamedAndRemoveUntil(
+        //         context,
+        //         shopprBottomNavBarRoute,
+        //         (route) => false,
+        //       )
+        //     : Navigator.pushNamedAndRemoveUntil(
+        //         context,
+        //         businessBottomNavBBarRoute,
+        //         (route) => false,
+        //       );
       }
     });
 
@@ -66,9 +68,12 @@ class LoginScreen extends ConsumerWidget {
                     grey12w500Center(data: 'Don’t have an account?'),
                     SizedBox(width: 4.w),
                     GestureDetector(
-                      onTap: () => role == Roles.shopper
-                          ? Navigator.pushNamed(context, signupThroughRoute)
-                          : Navigator.pushNamed(context, signupRoute),
+                      onTap: () {
+                        Navigator.pushNamed(context, signupRoute);
+                      },
+                      // onTap: () => role == Roles.shopper
+                      //     ? Navigator.pushNamed(context, signupThroughRoute)
+                      //     : Navigator.pushNamed(context, signupRoute),
                       child: blue12w600Center(data: 'Sign Up'),
                     ),
                   ],
@@ -139,43 +144,43 @@ class LoginScreen extends ConsumerWidget {
                   ),
                 ),
                 SizedBox(height: 24.h),
-                if (role == Roles.shopper)
-                  Column(
-                    children: [
-                      SvgPicture.asset(
-                        SvgAssets.or,
-                        height: 25.h,
-                        width: 343.w,
-                      ),
-                      SizedBox(height: 24.h),
-
-                      SocialButton(
-                        text: 'Continue with Google',
-                        iconPath: SvgAssets.google,
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ShopperBottomNavBar(),
-                            ),
-                          );
-                        },
-                      ),
-                      SizedBox(height: 16.h),
-                      SocialButton(
-                        text: 'Continue with Facebook',
-                        iconPath: SvgAssets.facebook,
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ShopperBottomNavBar(),
-                            ),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+                // if (role == Roles.shopper)
+                //   Column(
+                //     children: [
+                //       SvgPicture.asset(
+                //         SvgAssets.or,
+                //         height: 25.h,
+                //         width: 343.w,
+                //       ),
+                //       SizedBox(height: 24.h),
+                //
+                //       SocialButton(
+                //         text: 'Continue with Google',
+                //         iconPath: SvgAssets.google,
+                //         onPressed: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //               builder: (context) => ShopperBottomNavBar(),
+                //             ),
+                //           );
+                //         },
+                //       ),
+                //       SizedBox(height: 16.h),
+                //       SocialButton(
+                //         text: 'Continue with Facebook',
+                //         iconPath: SvgAssets.facebook,
+                //         onPressed: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //               builder: (context) => ShopperBottomNavBar(),
+                //             ),
+                //           );
+                //         },
+                //       ),
+                //     ],
+                //   ),
               ],
             ),
           ),

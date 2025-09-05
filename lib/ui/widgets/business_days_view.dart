@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../notifier/business_step_notifier.dart';
+import '../notifier/business_setup_notifier.dart';
 import '../themes/color_constants.dart';
 
 class BusinessDaysView extends ConsumerWidget {
@@ -35,7 +35,7 @@ class BusinessDaysView extends ConsumerWidget {
                   // Operating Days Dropdown
                   Consumer(
                     builder: (context, ref, child) {
-                      final state = ref.watch(businessStepProvider);
+                      final state = ref.watch(businessSetupProvider);
                       return DropdownButton2<String>(
                         hint: Text(
                           'Operating Days',
@@ -49,7 +49,7 @@ class BusinessDaysView extends ConsumerWidget {
                         items: _getDaysDropdownItems(),
                         onChanged: (value) {
                           ref
-                              .read(businessStepProvider.notifier)
+                              .read(businessSetupProvider.notifier)
                               .updateSelectedDay(value);
                         },
                         buttonStyleData: ButtonStyleData(
@@ -144,7 +144,7 @@ class BusinessDaysView extends ConsumerWidget {
                       Expanded(
                         child: Consumer(
                           builder: (context, ref, child) {
-                            final state = ref.watch(businessStepProvider);
+                            final state = ref.watch(businessSetupProvider);
                             return Container(
                               decoration: BoxDecoration(
                                 color: AppColors.lightGreyColor,
@@ -200,7 +200,7 @@ class BusinessDaysView extends ConsumerWidget {
                       Expanded(
                         child: Consumer(
                           builder: (context, ref, child) {
-                            final state = ref.watch(businessStepProvider);
+                            final state = ref.watch(businessSetupProvider);
                             return Container(
                               decoration: BoxDecoration(
                                 color: AppColors.lightGreyColor,
@@ -256,7 +256,7 @@ class BusinessDaysView extends ConsumerWidget {
                   // Add More Button
                   Consumer(
                     builder: (context, ref, child) {
-                      final state = ref.watch(businessStepProvider);
+                      final state = ref.watch(businessSetupProvider);
                       final canAdd =
                           state.selectedDay != null &&
                           state.startTime != null &&
@@ -267,7 +267,7 @@ class BusinessDaysView extends ConsumerWidget {
                         child: GestureDetector(
                           onTap: canAdd
                               ? () => ref
-                                    .read(businessStepProvider.notifier)
+                                    .read(businessSetupProvider.notifier)
                                     .addBusinessHour()
                               : null,
                           child: Container(
@@ -315,7 +315,7 @@ class BusinessDaysView extends ConsumerWidget {
                     width: double.infinity,
                     child: Consumer(
                       builder: (context, ref, child) {
-                        final state = ref.watch(businessStepProvider);
+                        final state = ref.watch(businessSetupProvider);
                         if (state.businessHours.isEmpty) {
                           return SizedBox(
                             height: 100.h,
@@ -383,7 +383,7 @@ class BusinessDaysView extends ConsumerWidget {
                                     ),
                                     IconButton(
                                       onPressed: () => ref
-                                          .read(businessStepProvider.notifier)
+                                          .read(businessSetupProvider.notifier)
                                           .removeBusinessHour(index),
                                       icon: Icon(
                                         Iconsax.trash,
@@ -458,9 +458,9 @@ class BusinessDaysView extends ConsumerWidget {
 
     if (selectedTime != null) {
       if (isStartTime) {
-        ref.read(businessStepProvider.notifier).updateStartTime(selectedTime);
+        ref.read(businessSetupProvider.notifier).updateStartTime(selectedTime);
       } else {
-        ref.read(businessStepProvider.notifier).updateEndTime(selectedTime);
+        ref.read(businessSetupProvider.notifier).updateEndTime(selectedTime);
       }
     }
   }

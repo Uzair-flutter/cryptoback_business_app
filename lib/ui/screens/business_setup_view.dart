@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../notifier/business_step_notifier.dart';
+import '../notifier/business_setup_notifier.dart';
 import '../themes/color_constants.dart';
 import '../widgets/add_store_locations_view.dart';
 import '../widgets/business_days_view.dart';
@@ -12,13 +12,13 @@ import '../widgets/describe_business_view.dart';
 import '../widgets/qr_code_view.dart';
 import '../widgets/upload_logo_view.dart';
 
-class BusinessStep extends ConsumerWidget {
-  const BusinessStep({super.key});
+class BusinessSetupView extends ConsumerWidget {
+  const BusinessSetupView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final businessState = ref.watch(businessStepProvider);
-    final businessNotifier = ref.read(businessStepProvider.notifier);
+    final businessState = ref.watch(businessSetupProvider);
+    final businessNotifier = ref.read(businessSetupProvider.notifier);
     late PageController pageController;
     // Initialize PageController with current step
     pageController = PageController(initialPage: businessState.currentStep!);

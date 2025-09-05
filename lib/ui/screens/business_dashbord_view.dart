@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../resources/assets.dart';
 import '../../widgets/bottom sheets/campagin_detail.dart';
+import '../../widgets/campaign_tile.dart';
 import '../../widgets/custom_blue_app_bar.dart';
 import 'all_campaigns_view.dart';
 
@@ -19,36 +20,6 @@ class BusinessDashboardView extends ConsumerWidget {
         title: '    Hi, Welcome John Doe',
         showActions: true,
         showLeading: false,
-        // actions: [
-        //   Container(
-        //     height: 30.h,
-        //     width: 30.w,
-        //     decoration: BoxDecoration(
-        //       color: AppColors.whiteColor,
-        //       shape: BoxShape.circle,
-        //     ),
-        //     child: Icon(
-        //       Iconsax.notification,
-        //       color: AppColors.kPrimaryColor,
-        //       size: 17.5.sp,
-        //     ),
-        //   ),
-        //   SizedBox(width: 10.w),
-        //   Container(
-        //     height: 30.h,
-        //     width: 30.w,
-        //     decoration: BoxDecoration(
-        //       color: AppColors.whiteColor,
-        //       shape: BoxShape.circle,
-        //     ),
-        //     child: Icon(
-        //       Icons.person,
-        //       color: AppColors.kPrimaryColor,
-        //       size: 17.5.sp,
-        //     ),
-        //   ),
-        //   SizedBox(width: 15.w),
-        // ],
       ),
       body: Padding(
         padding: EdgeInsets.all(20.w),
@@ -367,180 +338,36 @@ class BusinessDashboardView extends ConsumerWidget {
                     itemCount: campaigns.length,
                     itemBuilder: (context, index) {
                       final campaign = campaigns[index];
-                      return GestureDetector(
-                        onTap: () {
-                          showModalBottomSheet(
-                            context: context,
-                            isScrollControlled: true,
-                            //  backgroundColor: Colors.,
-                            builder: (context) => CampaignDetailBottomSheet(),
-                          );
-                        },
-                        child: Container(
-                          margin: EdgeInsets.only(bottom: 12.h),
-                          padding: EdgeInsets.all(14.w),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(12.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.04),
-                                blurRadius: 8,
-                                offset: Offset(0, 2),
-                              ),
-                            ],
+                      final isLastItem = index == campaigns.length - 1;
+                      return Column(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              showModalBottomSheet(
+                                context: context,
+                                isScrollControlled: true,
+                                builder: (context) =>
+                                    CampaignDetailBottomSheet(),
+                              );
+                            },
+                            child: CampaignTile(
+                              title: campaign.title,
+                              type: campaign.type,
+                              date: campaign.date,
+                              amount: campaign.date,
+                              id: campaign.id,
+                              isActive: campaign.isActive,
+                            ),
                           ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // Avatar with initials
-                              Container(
-                                width: 30.w,
-                                height: 30.h,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFE9E9E9),
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: AppColors.kPrimaryColor,
-                                    width: 1.w,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'JD',
-                                    style: TextStyle(
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.kPrimaryColor,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 12.w),
-
-                              // Campaign details
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        // Campaign type tag
-                                        Container(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 8.w,
-                                            vertical: 3.h,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFFEF4E8),
-                                            borderRadius: BorderRadius.circular(
-                                              43.r,
-                                            ),
-                                          ),
-                                          child: Text(
-                                            campaign.type,
-                                            style: TextStyle(
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xFFF18E19),
-                                            ),
-                                          ),
-                                        ),
-
-                                        Icon(
-                                          Icons.more_horiz,
-                                          color: AppColors.blackColor2,
-                                          size: 20.sp,
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 5.h),
-
-                                    // Campaign title
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          campaign.title,
-                                          style: TextStyle(
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w500,
-                                            color: Color(0xFF212121),
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 10.w,
-                                            vertical: 4.h,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: campaign.isActive
-                                                ? Color(0xFFE8F5E8)
-                                                : Color(0xFFFCE4EC),
-                                            borderRadius: BorderRadius.circular(
-                                              12.r,
-                                            ),
-                                          ),
-                                          child: Text(
-                                            campaign.isActive
-                                                ? 'Active'
-                                                : 'Expired',
-                                            style: TextStyle(
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.w500,
-                                              color: campaign.isActive
-                                                  ? Color(0xFF129E00)
-                                                  : AppColors.redColor,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 4.h),
-
-                                    // Date and ID row
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          campaign.date,
-                                          style: TextStyle(
-                                            fontSize: 12.sp,
-                                            fontWeight: FontWeight.w500,
-                                            color: Color(0xFF757575),
-                                          ),
-                                        ),
-                                        Text(
-                                          'ID: ${campaign.id}',
-                                          style: TextStyle(
-                                            fontSize: 12.sp,
-                                            fontWeight: FontWeight.w500,
-                                            color: AppColors.blackColor2,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                          if (isLastItem) SizedBox(height: 100.h),
+                        ],
                       );
                     },
                   );
                 },
               ),
             ),
-            SizedBox(height: 100.h),
+            // SizedBox(height: 100.h),
           ],
         ),
       ),

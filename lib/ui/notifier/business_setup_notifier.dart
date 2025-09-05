@@ -1,9 +1,9 @@
-// ui/notifier/business_step_notifier.dart
+// ui/notifier/business_setup_notifier.dart
 import 'package:cryptoback_business_app/utils/base_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../states/business_step_state.dart';
+import '../states/business_setup_state.dart';
 
 // class BusinessStepNotifiers extends BaseNotifier<BusinessStepState> {
 //   BusinessStepNotifiers() : super(BusinessStepState());
@@ -88,8 +88,8 @@ import '../states/business_step_state.dart';
 //       (ref) => BusinessStepNotifiers(),
 //     );
 
-class BusinessStepNotifiers extends BaseNotifier<BusinessStepState> {
-  BusinessStepNotifiers() : super(BusinessStepState());
+class BusinessSetupNotifiers extends BaseNotifier<BusinessSetupState> {
+  BusinessSetupNotifiers() : super(BusinessSetupState());
 
   @override
   void handleError(String message) {
@@ -261,7 +261,7 @@ class BusinessStepNotifiers extends BaseNotifier<BusinessStepState> {
   }
 }
 
-final businessStepProvider =
-    StateNotifierProvider<BusinessStepNotifiers, BusinessStepState>(
-      (ref) => BusinessStepNotifiers(),
+final businessSetupProvider =
+    StateNotifierProvider<BusinessSetupNotifiers, BusinessSetupState>(
+      (ref) => BusinessSetupNotifiers(),
     );

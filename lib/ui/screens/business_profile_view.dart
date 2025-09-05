@@ -237,12 +237,12 @@ class BusinessProfileScreen extends ConsumerWidget {
                     isLogout: false,
                   ),
 
-                  SizedBox(height: 100.h), // Space for bottom navigation
+                  SizedBox(height: 130.h), // Space for bottom navigation
                 ],
               ),
             ),
           ),
-          SizedBox(height: 40.h),
+          //  SizedBox(height: 40.h),
         ],
       ),
 

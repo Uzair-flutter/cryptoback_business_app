@@ -96,7 +96,7 @@ class RouteGenerator {
       case businessBottomNavBBarRoute:
         return MaterialPageRoute(builder: (_) => BusinessBottomNavBar());
       case businessStep:
-        return MaterialPageRoute(builder: (_) => BusinessStep());
+        return MaterialPageRoute(builder: (_) => BusinessSetupView());
       case merchantDetailRoute:
         return MaterialPageRoute(builder: (_) => MerchantDetailScreen());
       case favoriteRoute:

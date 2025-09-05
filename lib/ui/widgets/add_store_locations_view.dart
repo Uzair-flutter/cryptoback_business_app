@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../resources/assets.dart';
-import '../notifier/business_step_notifier.dart';
+import '../notifier/business_setup_notifier.dart';
 import '../themes/color_constants.dart';
 
 class AddStoreLocationsView extends ConsumerWidget {
@@ -48,7 +48,7 @@ class AddStoreLocationsView extends ConsumerWidget {
                       ),
                       child: Consumer(
                         builder: (context, ref, child) {
-                          final state = ref.watch(businessStepProvider);
+                          final state = ref.watch(businessSetupProvider);
                           return CustomTextFieldWithDropdown(
                             // key: ValueKey(
                             //   state.selectedAddress,
@@ -60,12 +60,12 @@ class AddStoreLocationsView extends ConsumerWidget {
                               '123 Address America',
                             ],
                             controller: ref
-                                .read(businessStepProvider.notifier)
+                                .read(businessSetupProvider.notifier)
                                 .addressController,
                             onSelected: (selectedValue) {
                               // Update selected address in Riverpod state
                               ref
-                                  .read(businessStepProvider.notifier)
+                                  .read(businessSetupProvider.notifier)
                                   .updateSelectedAddress(selectedValue);
                             },
                           );
@@ -77,7 +77,7 @@ class AddStoreLocationsView extends ConsumerWidget {
                 SizedBox(height: 10.h),
                 Consumer(
                   builder: (context, ref, child) {
-                    final state = ref.watch(businessStepProvider);
+                    final state = ref.watch(businessSetupProvider);
                     final canAdd =
                         state.selectedAddress != null &&
                         state.selectedAddress!.isNotEmpty;
@@ -87,10 +87,10 @@ class AddStoreLocationsView extends ConsumerWidget {
                         onTap: canAdd
                             ? () {
                                 ref
-                                    .read(businessStepProvider.notifier)
+                                    .read(businessSetupProvider.notifier)
                                     .addBusinessLocation();
                                 ref
-                                    .read(businessStepProvider.notifier)
+                                    .read(businessSetupProvider.notifier)
                                     .addressController
                                     .clear();
                               }
@@ -137,7 +137,7 @@ class AddStoreLocationsView extends ConsumerWidget {
                 // Business address List
                 Consumer(
                   builder: (context, ref, child) {
-                    final state = ref.watch(businessStepProvider);
+                    final state = ref.watch(businessSetupProvider);
                     // Show business locations if they exist
                     if (state.businessLocation.isNotEmpty) {
                       return ListView.builder(
@@ -187,7 +187,7 @@ class AddStoreLocationsView extends ConsumerWidget {
                                   ),
                                   IconButton(
                                     onPressed: () => ref
-                                        .read(businessStepProvider.notifier)
+                                        .read(businessSetupProvider.notifier)
                                         .removeBusinessLocation(index),
                                     icon: Icon(
                                       Iconsax.trash,

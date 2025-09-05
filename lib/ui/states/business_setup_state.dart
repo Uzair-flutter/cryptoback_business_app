@@ -1,46 +1,7 @@
-// ui/states/business_step_state.dart
+// ui/states/business_setup_state.dart
 import 'package:flutter/material.dart';
 
-// class BusinessStepState {
-//   final String? selectedDay;
-//   final String? selectedAddress; // New field for selected address
-//   final TimeOfDay? startTime;
-//   final TimeOfDay? endTime;
-//   final List<String> businessLocation;
-//   final List<BusinessHour> businessHours;
-//
-//   BusinessStepState({
-//     this.selectedDay,
-//     this.selectedAddress, // Add this parameter
-//     this.startTime,
-//     this.endTime,
-//     this.businessHours = const [],
-//     this.businessLocation = const [],
-//   });
-//
-//   BusinessStepState copyWith({
-//     String? selectedDay,
-//     String? selectedAddress, // Add this parameter
-//     TimeOfDay? startTime,
-//     TimeOfDay? endTime,
-//     List<BusinessHour>? businessHours,
-//     List<String>? businessLocation,
-//   }) {
-//     return BusinessStepState(
-//       selectedDay: selectedDay ?? this.selectedDay,
-//       selectedAddress:
-//           selectedAddress, // Update this line to allow null clearing
-//       startTime: startTime ?? this.startTime,
-//       endTime: endTime ?? this.endTime,
-//       businessHours: businessHours ?? this.businessHours,
-//       businessLocation: businessLocation ?? this.businessLocation,
-//     );
-//   }
-// }
-
-// Business hour model
-
-class BusinessStepState {
+class BusinessSetupState {
   final int? currentStep;
   final String? selectedDay;
   final String? selectedAddress;
@@ -56,7 +17,7 @@ class BusinessStepState {
   final bool isBusinessHoursValid;
   final bool isBusinessLocationValid;
 
-  BusinessStepState({
+  BusinessSetupState({
     this.currentStep = 0,
     this.selectedDay,
     this.selectedAddress,
@@ -71,7 +32,7 @@ class BusinessStepState {
     this.isBusinessLocationValid = false,
   });
 
-  BusinessStepState copyWith({
+  BusinessSetupState copyWith({
     int? currentStep,
     String? selectedDay,
     String? selectedAddress,
@@ -85,7 +46,7 @@ class BusinessStepState {
     bool? isBusinessHoursValid,
     bool? isBusinessLocationValid,
   }) {
-    return BusinessStepState(
+    return BusinessSetupState(
       currentStep: currentStep ?? this.currentStep,
       selectedDay: selectedDay ?? this.selectedDay,
       selectedAddress: selectedAddress,

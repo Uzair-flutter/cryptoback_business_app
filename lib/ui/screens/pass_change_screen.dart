@@ -44,8 +44,8 @@ class PassChangeScreen extends ConsumerWidget {
                 ),
               ),
               SizedBox(height: 24.w),
-              if (role == Roles.shopper)
-                Center(child: black25w500center(data: getDisplayText())),
+              // if (role == Roles.shopper)
+              //   Center(child: black25w500center(data: getDisplayText())),
               if (role == Roles.business)
                 Center(
                   child: Column(

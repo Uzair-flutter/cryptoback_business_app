@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../notifier/business_step_notifier.dart';
+import '../notifier/business_setup_notifier.dart';
 import '../themes/color_constants.dart';
 
 class DescribeBusiness extends ConsumerStatefulWidget {
@@ -16,7 +16,7 @@ class DescribeBusiness extends ConsumerStatefulWidget {
 class _DescribeBusinessState extends ConsumerState<DescribeBusiness> {
   @override
   Widget build(BuildContext context) {
-    final businessNotifier = ref.read(businessStepProvider.notifier);
+    final businessNotifier = ref.read(businessSetupProvider.notifier);
 
     return Column(
       children: [

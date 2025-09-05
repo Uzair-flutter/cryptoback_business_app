@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5211fce-f175-45d7-b0cf-b5cdfcc113ef" name="Changes" comment="" />
+    <list default="true" id="c5211fce-f175-45d7-b0cf-b5cdfcc113ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/notifier/business_step_notifier.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/notifier/business_setup_notifier.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/notifier/constant_notifiers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/notifier/constant_notifiers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/screens/business_dashbord_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/screens/business_dashbord_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/screens/business_profile_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/screens/business_profile_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/screens/business_setup_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/screens/business_setup_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/screens/customer_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/screens/customer_profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/screens/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/screens/login_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/screens/pass_change_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/screens/pass_change_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/screens/welcome_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/screens/welcome_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/states/business_step_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/states/business_setup_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/widgets/add_store_locations_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/widgets/add_store_locations_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/widgets/business_days_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/widgets/business_days_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/widgets/category_selection_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/widgets/category_selection_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/widgets/describe_business_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/widgets/describe_business_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/enums.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/enums.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +31,21 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Uzair-flutter"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Uzair-flutter/cryptoback_business_app.git",
+    "accountId": "33a718cd-0a58-42cc-80ca-81672c4d756b"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -21,22 +54,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/flutter/cryptoback_business_app&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flutter.main.dart.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/flutter/cryptoback_business_app",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="SwiftWorkspaceSettings">
     <option name="detectedToolchain" value="true" />
   </component>
